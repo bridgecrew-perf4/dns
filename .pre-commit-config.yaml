@@ -1,0 +1,13 @@
+repos:
+  - repo: local
+    hooks:
+      - id: format
+        name: format
+        entry: terraform fmt
+        language: system
+        pass_filenames: false
+      - id: validate
+        name: format
+        entry: terraform validate
+        language: system
+        pass_filenames: false
