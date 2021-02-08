@@ -33,6 +33,17 @@ resource "cloudflare_record" "web-a" {
 
 resource "cloudflare_page_rule" "web-redirect-rule" {
   zone_id = var.zone_id
+  target  = "*treebeard.io/slack"
+  actions {
+    forwarding_url {
+      status_code = 301
+      url         = "https://join.slack.com/t/treebeard-entmoot/shared_invite/zt-ltyrvvmv-g7Rl1vi3QaDhGiDmXOCNfg"
+    }
+  }
+}
+
+resource "cloudflare_page_rule" "web-redirect-rule" {
+  zone_id = var.zone_id
   target  = "*treebeard.io/*"
   actions {
     forwarding_url {
@@ -40,7 +51,6 @@ resource "cloudflare_page_rule" "web-redirect-rule" {
       url         = "https://github.com/alex-treebeard"
     }
   }
-
 }
 
 resource "cloudflare_record" "api-cname" {
