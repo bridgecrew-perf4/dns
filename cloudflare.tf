@@ -31,7 +31,7 @@ resource "cloudflare_record" "web-a" {
   proxied = true
 }
 
-resource "cloudflare_page_rule" "web-redirect-rule" {
+resource "cloudflare_page_rule" "slack-redirect-rule" {
   zone_id = var.zone_id
   target  = "*treebeard.io/slack"
   actions {
