@@ -44,7 +44,7 @@ resource "cloudflare_page_rule" "slack-redirect-rule" {
 
 resource "cloudflare_page_rule" "web-redirect-rule" {
   zone_id = var.zone_id
-  target  = "*treebeard.io/*"
+  target  = "*treebeard.io/"
   actions {
     forwarding_url {
       status_code = 301
